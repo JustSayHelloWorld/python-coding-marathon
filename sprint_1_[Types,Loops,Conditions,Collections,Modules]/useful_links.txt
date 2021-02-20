@@ -1,0 +1,10 @@
+IntroductionURL - https://www.youtube.com/watch?v=QS6vAMtL4qc&feature=youtu.be
+Data typesURL - https://www.youtube.com/watch?v=GB-KJGkU-tw&feature=youtu.be
+Conditions operatorURL - https://www.youtube.com/watch?v=ULLsRH0YTmc&feature=youtu.be
+LoopsURL - https://www.youtube.com/watch?v=WBd1qLAoZBM&feature=youtu.be
+CollectionsURL - https://www.youtube.com/watch?v=rhYsde-P-wI&feature=youtu.be
+Modules and packagesURL - https://www.youtube.com/watch?v=zxSFrVBSw3I&feature=youtu.be
+PEP-8 naming conventionsURL - https://www.youtube.com/watch?v=Sm0wwmEwqpI
+
+
+

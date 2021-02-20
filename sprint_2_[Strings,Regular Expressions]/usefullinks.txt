@@ -1,0 +1,2 @@
+how to use regex  - https://www.youtube.com/watch?v=UQQsYXa1EHs
+strings in python - https://www.youtube.com/watch?v=Ctqi5Y4X-jA
