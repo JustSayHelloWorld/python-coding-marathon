@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "mini",
+      "setup": "",
+      "run": "python3 -m unittest minimal_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

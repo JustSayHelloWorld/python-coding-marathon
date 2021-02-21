@@ -1,2 +1,2 @@
 # python-coding-marathon
-SoftServe Python Online Marathon
+Set of homeworks done during the SoftServe Python Online Marathon
