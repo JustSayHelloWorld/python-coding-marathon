@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="col-6">
+                <a href="{% url 'books' %}" class="btn btn-success mt-2 float-right">К списку</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-dark table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>Название</th>
+                    <td>{{ book.name }}</td>
+                </tr>
+                <tr>
+                    <th>Автор(ы)</th>
+                    <td>
+                        {% for author in book.authors.all %}
+                            <p>{{ author.name }} {{ author.surname }}</p>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Описание</th>
+                    <td>{{ book.description }}</td>
+                </tr>
+                <tr>
+                    <th>Количество экземпляров</th>
+                    <td>{{ book.count }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

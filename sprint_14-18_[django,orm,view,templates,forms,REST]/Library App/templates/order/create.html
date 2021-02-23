@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<H1>Добавление Заказа!</H1>
+<form method="post">
+    {{form}}
+    <span>{{error}}<br></span>
+    <button class="btn btn-success" type="submit">Add</button>
+{% csrf_token %}
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="col-6">
+                <a href="{% url 'add_author'  %}" class="btn btn-success mt-2 float-right">Добавить автора</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    {% if authors %}
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ФИО</th>
+                    <th scope="col">Действие</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for author in authors %}
+                    <tr>
+                        <th scope="row">{{ author.id }}</th>
+                        <th>{{ author.get_full_name }}</th>
+                        <td>
+                            <a href="{% url 'author' author.id %}" class="text-decoration-none">
+                                <button type="button" class="btn btn-secondary">детали</button>
+                                </a>
+
+                            <a href="{% url 'add_author' author.id %}">
+                            <button type="button" class="btn btn-success">обновить</button>
+                                </a>
+
+                            <a href="{% url 'del_author' author.id %}">
+                                <button type="button" class="btn btn-danger">удалить</button>
+                                </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            Авторы еще не добавлены
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

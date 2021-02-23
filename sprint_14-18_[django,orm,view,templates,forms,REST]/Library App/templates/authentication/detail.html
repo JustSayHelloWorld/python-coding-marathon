@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="col-6">
+                <a href="{% url 'users' %}" class="btn btn-success mt-2 float-right">К списку</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-dark table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>Фамилия</th>
+                    <td>{{ user.last_name }}</td>
+                </tr>
+                <tr>
+                    <th>Имя</th>
+                    <td>{{ user.first_name }}</td>
+                </tr>
+                <tr>
+                    <th>Отчество</th>
+                    <td>{{ user.middle_name }}</td>
+                </tr>
+                <tr>
+                    <th>Почта</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Пароль</th>
+                    <td>{{ user.password }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

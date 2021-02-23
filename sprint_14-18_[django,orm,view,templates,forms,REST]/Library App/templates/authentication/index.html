@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ title }}</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+    {% if users %}
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Почта</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Отчество</th>
+                    <th scope="col">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td><a href="{% url 'user' user.id %}" class="text-decoration-none">
+                                {{ user.email }}
+                            </a></td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.middle_name }}</td>
+<td>
+            <a href="{%url 'edit_user' user.id%}"><button type="button" class="btn btn-link">Edit</button><a/>
+            <br>
+            <form action="{% url 'delete_user' user.id %}" method="post">
+    {% csrf_token %}<button type="submit" class="btn btn-link">Delete</button></form>
+                        </td>
+</tr>
+
+                {% endfor %}
+
+
+            </tbody>
+
+        </table>
+
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            В библиотеке нет активных пользователей...
+        </div>
+    {% endif %}
+        <a href="{%url 'create_user'%}"><button type="button" class="btn btn-primary btn-lg">Add</button></a>
+    </div>
+{% endblock %}

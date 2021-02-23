@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="col-6">
+                <a href="{% url 'orders' %}" class="btn btn-success mt-2 float-right">К списку</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-dark table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>Пользователь</th>
+                    <td>{{ order.user.last_name }} {{ order.user.first_name }}  ({{ order.user.email }})</td>
+                </tr>
+                <tr>
+                    <th>заказанная книга</th>
+                    <td>{{ order.book.name }}</td>
+                </tr>
+                <tr>
+                    <th>время создания заказа</th>
+                    <td>{{ order.created_at }}</td>
+                </tr>
+                <tr>
+                    <th>время возврата</th>
+                    <td>{{ order.end_at }}</td>
+                </tr>
+                <tr>
+                    <th>окончатеьлное время возврата</th>
+                    <td>{{ order.plated_end_at  }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
